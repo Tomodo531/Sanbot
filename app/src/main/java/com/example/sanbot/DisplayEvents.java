@@ -16,6 +16,7 @@ import org.json.JSONObject;
 public class DisplayEvents extends AppCompatActivity {
 
     public String GetDate = null;
+    public String dateClicked = null;
     public JSONArray EventsArray = null;
 
     @Override
@@ -24,12 +25,21 @@ public class DisplayEvents extends AppCompatActivity {
         setContentView(R.layout.activity_display_events);
 
         GetDate = getIntent().getExtras().getString("LIST_OF_OBJECTS");
+        dateClicked = getIntent().getExtras().getString("dateClicked");
         ListView EventList = findViewById(R.id.EventList);
 
         JSONObject root = null;
         try {
             root = new JSONObject("{Events:" + GetDate + "}");
             EventsArray = root.getJSONArray("Events");
+
+            TextView DateTextView = findViewById(R.id.DateTextView);
+            DateTextView.setText(dateClicked.substring(0, 11));
+
+            if (EventsArray.length() == 0){
+                TextView NoEventsTextView = findViewById(R.id.NoEventsTextView);
+                NoEventsTextView.setText("No Events");
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }

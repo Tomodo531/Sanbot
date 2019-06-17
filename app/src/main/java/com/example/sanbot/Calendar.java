@@ -96,6 +96,7 @@ public class Calendar extends AppCompatActivity {
                 Intent mDisplayEvnts = new Intent(Calendar.this, DisplayEvents.class);
                 String listSerializedToJson = new Gson().toJson(EventArray);
                 mDisplayEvnts.putExtra("LIST_OF_OBJECTS", listSerializedToJson);
+                mDisplayEvnts.putExtra("dateClicked", dateClicked + "");
                 startActivity(mDisplayEvnts);
             }
 
