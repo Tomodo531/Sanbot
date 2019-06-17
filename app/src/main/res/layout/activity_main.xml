@@ -11,11 +11,11 @@
         android:layout_weight="1" >
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/NewsBtn"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:text=""/>
+            android:text="NEWS"/>
 
         <Button
             android:id="@+id/CalenderBtn"

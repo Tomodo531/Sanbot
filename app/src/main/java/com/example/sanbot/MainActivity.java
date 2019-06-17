@@ -23,5 +23,14 @@ public class MainActivity extends AppCompatActivity {
                startActivity(mCalendar);
             }
         });
+
+        Button NewsBtn = findViewById(R.id.NewsBtn);
+        NewsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mNewsActivity = new Intent(MainActivity.this, NewsActivity.class);
+                startActivity(mNewsActivity);
+            }
+        });
     }
 }

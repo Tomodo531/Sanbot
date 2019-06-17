@@ -45,7 +45,7 @@ public class Calendar extends AppCompatActivity {
 
         mQueue = Volley.newRequestQueue(this);
 
-        String ApiUrl = "http://myresume.dk/PHP/GetPopUpContentJSON.php";
+        String ApiUrl = "http://myresume.dk/SanbotWebsite/php/API/EventsAPI.php";
 
         JsonObjectRequest EventRequest = new JsonObjectRequest(Request.Method.GET, ApiUrl, null,
                 new Response.Listener<JSONObject>() {
