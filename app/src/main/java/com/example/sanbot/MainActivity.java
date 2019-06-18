@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button CalenderBtn = findViewById(R.id.CalenderBtn);
+        ImageButton CalenderBtn = findViewById(R.id.CalenderBtn);
         CalenderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button NewsBtn = findViewById(R.id.NewsBtn);
+        ImageButton NewsBtn = findViewById(R.id.NewsBtn);
         NewsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
