@@ -49,7 +49,7 @@ public class DisplayEvents extends AppCompatActivity {
         EventList.setAdapter(customadapter);
     }
 
-    class Customadapter extends BaseAdapter {
+    private class Customadapter extends BaseAdapter {
 
         @Override
         public int getCount() {

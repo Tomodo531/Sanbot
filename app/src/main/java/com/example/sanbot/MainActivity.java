@@ -32,5 +32,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(mNewsActivity);
             }
         });
+
+        ImageButton MadplanBtn = findViewById(R.id.MadplanBtn);
+        MadplanBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mNewsActivity = new Intent(MainActivity.this, Madplan.class);
+                startActivity(mNewsActivity);
+            }
+        });
     }
 }
