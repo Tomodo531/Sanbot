@@ -4,13 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sanbot.Madplan">
+    tools:context="com.example.sanbot.Madplan"
+    android:background="@drawable/gradient">
+
+    <TextView
+        android:id="@+id/UgeNr"
+        android:layout_width="800dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:text="Madplan"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/NoItems"
+        android:layout_width="694dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/MadplanList" />
 
     <ListView
         android:id="@+id/MadplanList"
-        android:layout_width="584dp"
-        android:layout_height="944dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp"
+        android:layout_width="800dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:divider="@drawable/background_divider"
+        android:dividerHeight="10.0sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UgeNr"
         tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/Backwards"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        android:background="@drawable/background_divider"
+        app:layout_constraintStart_toStartOf="@+id/UgeNr"
+        app:layout_constraintTop_toTopOf="@+id/UgeNr"
+        app:srcCompat="@drawable/backwards"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/Forwards"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        android:background="@drawable/background_divider"
+        app:layout_constraintEnd_toEndOf="@+id/UgeNr"
+        app:layout_constraintTop_toTopOf="@+id/UgeNr"
+        app:srcCompat="@drawable/forwards"
+        tools:ignore="MissingConstraints" />
+
 </android.support.constraint.ConstraintLayout>
