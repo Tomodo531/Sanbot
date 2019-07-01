@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="350dp"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/Timeitem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/Tempitem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintTop_toBottomOf="@+id/Timeitem"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <ImageView
+        android:id="@+id/WeatherImageItem"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="16dp"
+        tools:srcCompat="@tools:sample/avatars" />
+</android.support.constraint.ConstraintLayout>

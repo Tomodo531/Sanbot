@@ -41,5 +41,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(mNewsActivity);
             }
         });
+
+        ImageButton WeatherBtn = findViewById(R.id.WeatherBtn);
+        WeatherBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mNewsActivity = new Intent(MainActivity.this, Weather.class);
+                startActivity(mNewsActivity);
+            }
+        });
     }
 }

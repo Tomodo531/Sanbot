@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShowInfoMadplan"></activity>
+        <activity android:name=".Weather"></activity>
+        <activity android:name=".ShowInfoMadplan" />
         <activity android:name=".Madplan2" />
         <activity android:name=".Madplan" />
         <activity android:name=".NewsActivity" />
