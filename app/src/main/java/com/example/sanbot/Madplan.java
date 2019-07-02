@@ -152,12 +152,14 @@ public class Madplan extends AppCompatActivity {
             convertView = getLayoutInflater().inflate(R.layout.madplanitem_container, null);
             TextView textView = convertView.findViewById(R.id.textView);
             TextView textView2 = convertView.findViewById(R.id.textView2);
+            TextView textView4 = convertView.findViewById(R.id.textView4);
 
             try {
                 JSONObject MadplanObject = jsonArray.getJSONObject(position);
 
                 textView.setText(MadplanObject.getString("Title"));
                 textView2.setText(MadplanObject.getString("Day").substring(1));
+                textView4.setText(MadplanObject.getString("Infomation"));
 
             } catch (JSONException e) {
                 e.printStackTrace();

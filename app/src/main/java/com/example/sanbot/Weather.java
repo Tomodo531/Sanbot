@@ -24,6 +24,7 @@ import org.json.JSONObject;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Weather extends AppCompatActivity {
@@ -124,19 +125,19 @@ public class Weather extends AppCompatActivity {
                             Log.d("Listss", "WeatherListDary5: " + WeatherListDary5);
 
                             TextView DayTw = findViewById(R.id.DayTw1); ImageView WeatherImg = findViewById(R.id.WeatherImg1); TextView TempTw = findViewById(R.id.TempTw1); ListView WeatherList = findViewById(R.id.WeatherList1);
-                            InsertInput(DayTw, WeatherImg, TempTw, WeatherList, WeatherListDary1);
+                            InsertInput(0, DayTw, WeatherImg, TempTw, WeatherList, WeatherListDary1);
 
                             DayTw = findViewById(R.id.DayTw2); WeatherImg = findViewById(R.id.WeatherImg2); TempTw = findViewById(R.id.TempTw2); WeatherList = findViewById(R.id.WeatherList2);
-                            InsertInput(DayTw, WeatherImg, TempTw, WeatherList, WeatherListDary2);
+                            InsertInput(1, DayTw, WeatherImg, TempTw, WeatherList, WeatherListDary2);
 
                             DayTw = findViewById(R.id.DayTw3); WeatherImg = findViewById(R.id.WeatherImg3); TempTw = findViewById(R.id.TempTw3); WeatherList = findViewById(R.id.WeatherList3);
-                            InsertInput(DayTw, WeatherImg, TempTw, WeatherList, WeatherListDary3);
+                            InsertInput(2, DayTw, WeatherImg, TempTw, WeatherList, WeatherListDary3);
 
                             DayTw = findViewById(R.id.DayTw4); WeatherImg = findViewById(R.id.WeatherImg4); TempTw = findViewById(R.id.TempTw4); WeatherList = findViewById(R.id.WeatherList4);
-                            InsertInput(DayTw, WeatherImg, TempTw, WeatherList, WeatherListDary4);
+                            InsertInput(3, DayTw, WeatherImg, TempTw, WeatherList, WeatherListDary4);
 
                             DayTw = findViewById(R.id.DayTw5); WeatherImg = findViewById(R.id.WeatherImg5); TempTw = findViewById(R.id.TempTw5); WeatherList = findViewById(R.id.WeatherList5);
-                            InsertInput(DayTw, WeatherImg, TempTw, WeatherList, WeatherListDary5);
+                            InsertInput(4, DayTw, WeatherImg, TempTw, WeatherList, WeatherListDary5);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -157,15 +158,51 @@ public class Weather extends AppCompatActivity {
 
     public int size = 0;
 
-    public void InsertInput(TextView DayTV, ImageView ImgV, TextView TempTV, ListView TempList, ArrayList<JSONObject> ArrayList) throws JSONException {
-
-        Log.d("Listss", "getView: " + ArrayList.size());
+    public void InsertInput(int DayAddition, TextView DayTV, ImageView ImgV, TextView TempTV, ListView TempList, ArrayList<JSONObject> ArrayList) throws JSONException {
 
         String DateDate = ArrayList.get(0).getString("dt_txt").substring(0,10);
-        DayTV.setText(DateDate);
 
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
+
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);
+        int DayOfweek = c.get(Calendar.DAY_OF_WEEK) + DayAddition;
+        String Day = "";
+
+            switch (DayOfweek){
+
+                case 1:
+                    Day = "Søndag";
+                    break;
+
+                case 2:
+                    Day = "Mandag";
+                    break;
+
+                case 3:
+                    Day = "Tirsdag";
+                    break;
+
+                case 4:
+                    Day = "Onsdag";
+                    break;
+
+                case 5:
+                    Day = "Torsdag";
+                    break;
+
+                case 6:
+                    Day = "Fredag";
+                    break;
+
+                case 7:
+                    Day = "Lørdag";
+                    break;
+            }
+
+        DayTV.setText(Day);
+
 
         if (DateDate.equals(dateFormat.format(date))){
             TempTV.setText(ArrayList.get(0).getJSONObject("main").getString("temp").substring(0,2) + "\u00B0");
@@ -178,7 +215,6 @@ public class Weather extends AppCompatActivity {
             int resID = getResources().getIdentifier("img"+ArrayList.get(4).getJSONArray("weather").getJSONObject(0).getString("icon") , "drawable", getPackageName());
             ImgV.setImageResource(resID);
         }
-
 
         Customadpater customadpater = new Customadpater(ArrayList);
 
